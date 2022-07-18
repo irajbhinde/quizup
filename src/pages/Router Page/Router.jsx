@@ -1,7 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { HomePage, RulesPage } from "../index";
-import QuestionPage from "../Question Page/QuestionPage";
-
+import { HomePage, RulesPage, QuestionPage, ResultsPage } from "../index";
 
 export default function Router() {
   return (
@@ -9,6 +7,7 @@ export default function Router() {
       <Route path="/" element={<HomePage />} />
       <Route path="/rules" element={<RulesPage />} />
       <Route path="/quiz" element={<QuestionPage />} />
+      <Route path="/results" element={<ResultsPage />} />
     </Routes>
   );
 }

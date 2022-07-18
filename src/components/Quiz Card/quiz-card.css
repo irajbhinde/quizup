@@ -1,0 +1,25 @@
+.categoryCard{
+    width: 30rem;
+    height: 42rem;
+    border-radius: 25px;
+    background-color: rgba(25, 33, 41, 1);
+    color: var(--white-text);
+    gap: 1rem;
+}
+
+.categoryCard img {
+    width: 100%;
+    height: 73%;
+    border-radius: 25px;
+}
+
+.category-cards-container{
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.text-description{
+    margin: 0 0.8rem ;
+    font-size: 1.4rem;
+    color: rgba(141, 136, 132, 1);
+}

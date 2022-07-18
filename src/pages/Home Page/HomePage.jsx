@@ -10,8 +10,8 @@ export default function HomePage() {
       <div className="category-container flex_c">
         <h1 className="text-category">Categories</h1>
         <div className="category-cards-container flex_r align-center">
-          {categories.map((card) => (
-            <CategoryCard categories={card} key={card.categoryName} />
+          {categories.map((categoryItem) => (
+            <CategoryCard categoryItem={categoryItem} key={categoryItem.categoryName} />  
           ))}
         </div>
       </div>

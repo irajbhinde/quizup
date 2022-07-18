@@ -1,8 +1,14 @@
 import { Nav } from "../../components";
 import "./rules-page.css";
 import "../../Utils/styles.css";
+import { useQuiz } from "../../components/context/quiz-context";
+import { useNavigate } from "react-router-dom";
 
 export default function RulesPage() {
+  const navigate = useNavigate();
+  const { quizState } = useQuiz();
+  const { categoryValue } = quizState;
+  console.log("lets see", categoryValue);
   return (
     <div className="rulespage-wrapper  flex_c">
       <Nav />
@@ -20,8 +26,13 @@ export default function RulesPage() {
         </div>
       </div>
       <footer className="rulespage-footer">
-        <button className="btn-letsgo cursor-pointer">
-            Lets Go! 
+        <button
+          onClick={() => {
+            navigate("/quiz");
+          }}
+          className="btn-letsgo cursor-pointer"
+        >
+          Lets Go!
         </button>
       </footer>
     </div>
