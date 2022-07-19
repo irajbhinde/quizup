@@ -1,13 +1,22 @@
 import "./nav.css";
 import "../../Utils/styles.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useQuiz } from "../context/quiz-context";
 
 export default function Nav() {
+  const navigate = useNavigate();
+  const { quizDispatch } = useQuiz();
   return (
     <nav className="nav-bar">
-      <Link to="/">
-        <h1 className="nav-title">QuizUp</h1>
-      </Link>
+      <h1
+        onClick={() => {
+          navigate("/");
+          quizDispatch({ type: "CLEAR_CATEGORY" });
+        }}
+        className="nav-title cursor-pointer"
+      >
+        QuizUp
+      </h1>
     </nav>
   );
 }

@@ -63,10 +63,11 @@ export default function QuestionPage() {
       newQuestion:
         quizData.categories[categoryValue].questions[currentQuestion].question,
       newOptions: [currentOptions],
+      correctAnswer:
+        quizData.categories[categoryValue].questions[currentQuestion].answer,
+      selectedAnswer: names,
     };
     quizDispatch({ type: "RESULTS_DATA", payload: resultPageData });
-    const selectedOption = names;
-    quizDispatch({ type: "SET_SELECTED_OPTION", payload: selectedOption });
   };
 
   const listItems = currentOptions.map((names) => {

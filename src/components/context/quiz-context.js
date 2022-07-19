@@ -5,12 +5,9 @@ const QuizContext = createContext(null);
 const useQuiz = () => useContext(QuizContext);
 const QuizProvider = ({ children }) => {
   const [quizState, quizDispatch] = useReducer(quizReducer, {
-    quizQuestions: [],
     categoryValue: null,
-    currentQuestion: 0,
     score: 0,
     questionData: [],
-    selectedOption: [],
   });
 
   return (

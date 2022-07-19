@@ -1,12 +1,6 @@
 export const quizReducer = (state, action) => {
-  console.log("triggered", action);
   const { type, payload } = action;
   switch (type) {
-    case "CURRENT_QUESTIONS":
-      return {
-        ...state,
-        quizQuestions: payload,
-      };
     case "SELECT_CATEGORY":
       return {
         ...state,
@@ -22,10 +16,14 @@ export const quizReducer = (state, action) => {
         ...state,
         questionData: [...state.questionData, payload],
       };
-    case "SET_SELECTED_OPTION":
+    case "CLEAR_CATEGORY":
       return {
         ...state,
-        selectedOption: [...state.selectedOption, payload],
+        quizQuestions: [],
+        categoryValue: null,
+        currentQuestion: 0,
+        score: 0,
+        questionData: [],
       };
     default:
       break;
