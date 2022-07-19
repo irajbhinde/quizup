@@ -6,9 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function RulesPage() {
   const navigate = useNavigate();
-  const { quizState } = useQuiz();
-  const { categoryValue } = quizState;
-  console.log("lets see", categoryValue);
   return (
     <div className="rulespage-wrapper  flex_c">
       <Nav />

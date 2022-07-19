@@ -63,6 +63,3 @@ export const quizData = {
     },
   ]
 };
-
-console.log(quizData.categories[1].questions[0].incorrectOptions);
-

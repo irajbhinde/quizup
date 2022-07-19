@@ -32,7 +32,7 @@
   justify-content: flex-start;
 }
 
-.btn-letsgo{
+.btn-letsgo, .btn-returnToHome{
     padding: 2rem 4rem;
     background-color: var(--primary-color);
     border-radius: 5px;
