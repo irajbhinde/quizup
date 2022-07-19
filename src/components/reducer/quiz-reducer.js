@@ -26,6 +26,6 @@ export const quizReducer = (state, action) => {
         questionData: [],
       };
     default:
-      break;
+      return state;
   }
 };
