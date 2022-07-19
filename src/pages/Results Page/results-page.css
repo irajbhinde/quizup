@@ -1,0 +1,35 @@
+.resultspage-wrapper {
+  color: var(--white-text);
+  background-color: var(--background-color);
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.questions-container {
+  width: 50%;
+  margin: 0 auto;
+  gap: 3rem;
+}
+
+.final-score {
+  font-size: 3rem;
+}
+
+.results-container {
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.green {
+  background-color: var(--green);
+}
+
+.red {
+  background-color: red;
+}
+
+.btn-returnToHome{
+  margin: 4rem auto 4rem auto;
+}
+

@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+  color: var(--white-text);
+}
+
+:root{
+    --background-color : #0e131f;
+    --white-text : #F5F5F5;
+    --primary-color : #3875AC;
+    --options-bg : rgba(25,33,44,1);
+    --green : #00D100;
+    --red : #b30000;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+.flex_r {
+  display: flex;
+}
+
+.flex_c {
+  display: flex;
+  flex-direction: column;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.align-center {
+  align-items: center;
+  justify-content: center;
+}

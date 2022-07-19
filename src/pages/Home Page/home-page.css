@@ -1,0 +1,20 @@
+.homepage-wrapper{
+    background-color: var(--background-color);
+    display: grid;
+    grid-template-rows: 8rem 1fr; 
+    grid-template-columns: 1fr;
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas: 
+    "nav nav nav"
+    "main main main";
+}
+
+.text-category{
+    color: var(--white-text);
+    font-size: 3rem;
+}
+
+.category-container{
+    gap: 8rem;
+}

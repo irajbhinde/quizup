@@ -1,0 +1,46 @@
+.rulespage-wrapper {
+  color: var(--white-text);
+  background-color: var(--background-color);
+  width: 100vw;
+  height: 100vh;
+}
+
+.text-rule {
+  width: 80%;
+  margin: 0 auto;
+  padding: 3rem 0;
+  color: var(--white-text);
+  font-size: 3rem;
+  border-bottom: 1px solid white;
+}
+
+.category-container {
+  gap: 8rem;
+}
+
+.rules-content{
+    gap: 1rem;
+    width: 80%;
+    margin: 0 auto;
+    padding: 3rem 0;
+    border-bottom: 1px solid white;
+}
+
+.rules-content p {
+  display: flex;
+  font-size: 2.5rem;
+  justify-content: flex-start;
+}
+
+.btn-letsgo, .btn-returnToHome{
+    padding: 2rem 4rem;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    color: var(--white-text);
+    font-size: 2rem;
+}
+
+.rulespage-footer{
+    margin-top: 5rem;
+}
+
