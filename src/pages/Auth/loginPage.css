@@ -1,0 +1,103 @@
+.loginpage-wrapper {
+  background-color: var(--background-color);
+  display: grid;
+  grid-template-rows: 8rem 1fr;
+  grid-template-columns: 1fr;
+  width: 100vw;
+  height: 100vh;
+  grid-area: login;
+  grid-template-areas:
+    "nav"
+    "login";
+}
+
+.remember-me-checkbox {
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="checkbox"] {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.login-container {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 64rem;
+  height: 48rem;
+  margin: 0 auto;
+  background-color: var(--background-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  gap: 2rem;
+}
+
+.login-title {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label input {
+  width: 37rem;
+  height: 2.5rem;
+}
+
+input {
+  color: black;
+  border: none;
+  outline: none;
+}
+
+.login-container [type="text"]:focus,
+.login-container input[type="password"]:focus,
+input[type="email"]:focus,
+.signup-container [type="text"]:focus,
+.signup-container input[type="password"]:focus,
+input[type="email"]:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+label p {
+  display: flex;
+}
+
+.input-container {
+  align-items: center;
+  justify-content: space-between;
+  width: 37rem;
+  height: 2.5rem;
+}
+
+.login-btn,
+.btn-guestLogin {
+  color: var(--background-color);
+  font-size: 1.8rem;
+  background-color: var(--primary-color);
+  width: 37rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.btn-guestLogin {
+  background-color: #908988;
+}
+
+.input-password {
+  position: relative;
+}
+
+.form-container {
+  gap: 2rem;
+}
