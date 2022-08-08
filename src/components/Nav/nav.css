@@ -6,10 +6,17 @@
     color: var(--white-text);
     background-color: var(--backgound-color);
     color: var(--white-text);
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-title{
     padding-left: 3rem;
-    padding-top: 1rem;
     font-size: 3rem;
+}
+
+.login-signup-header, .logout-header{
+    font-size: 2rem;
+    gap: 2rem;
+    padding-right: 3rem;
 }
