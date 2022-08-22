@@ -52,3 +52,7 @@
   background-color: var(--red);
   color: var(--white-text);
 }
+
+.questions-container-wrapper{
+  background-color: var(--background-color);
+}

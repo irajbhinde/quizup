@@ -88,42 +88,44 @@ export default function QuestionPage() {
   return (
     <div className="questionpage-wrapper">
       <Nav />
-      <div className="questions-container flex_c">
-        <div className="container-header flex_r">
-          <p>
-            Question : {currentQuestion + 1}/
-            {quizData.categories[categoryValue].questions.length}
-          </p>
-          <p>Score : {score}</p>
+      <div className="questions-container-wrapper">
+        <div className="questions-container flex_c">
+          <div className="container-header flex_r">
+            <p>
+              Question : {currentQuestion + 1}/
+              {quizData.categories[categoryValue].questions.length}
+            </p>
+            <p>Score : {score}</p>
+          </div>
+          <div className="question-box">
+            <p>
+              {
+                quizData.categories[categoryValue].questions[currentQuestion]
+                  .question
+              }
+            </p>
+          </div>
+          {listItems}
+          {currentQuestion === 4 ? (
+            <button
+              onClick={() => {
+                navigate("/results");
+              }}
+              className="btn-nextQuestion"
+            >
+              Submit & Go to Results Page
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                setCurrentQuestion(currentQuestion + 1);
+              }}
+              className="btn-nextQuestion"
+            >
+              Next Question
+            </button>
+          )}
         </div>
-        <div className="question-box">
-          <p>
-            {
-              quizData.categories[categoryValue].questions[currentQuestion]
-                .question
-            }
-          </p>
-        </div>
-        {listItems}
-        {currentQuestion === 4 ? (
-          <button
-            onClick={() => {
-              navigate("/results");
-            }}
-            className="btn-nextQuestion"
-          >
-            Submit & Go to Results Page
-          </button>
-        ) : (
-          <button
-            onClick={() => {
-              setCurrentQuestion(currentQuestion + 1);
-            }}
-            className="btn-nextQuestion"
-          >
-            Next Question
-          </button>
-        )}
       </div>
     </div>
   );

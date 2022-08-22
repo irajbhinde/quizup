@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../pages/Auth/loginPage.css"
+import "../../pages/Auth/loginPage.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/auth-context";
 import { useFormik } from "formik";
@@ -31,7 +31,7 @@ export default function LoginCard() {
         authToken: response.data.encodedToken,
         authStatus: true,
       });
-      navigate("/")
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -93,7 +93,13 @@ export default function LoginCard() {
             </span>
             <p className="cursor-pointer">Forgot your password ?</p>
           </div>
-          <button type="submit" className="login-btn">
+          <button
+            disabled={
+              formik.values.email === "" || formik.values.password === ""
+            }
+            type="submit"
+            className="login-btn"
+          >
             Login
           </button>
           <button

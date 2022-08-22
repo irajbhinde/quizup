@@ -101,3 +101,12 @@ label p {
 .form-container {
   gap: 2rem;
 }
+
+.login-container button[disabled=disabled], .login-container button:disabled {
+  background-color: var(--white-text);
+  cursor: not-allowed;
+}
+
+.login-card-wrapper, .signup-card-wrapper{
+  background-color: var(--background-color);
+}

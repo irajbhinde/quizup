@@ -16,6 +16,7 @@
 .category-cards-container{
     flex-wrap: wrap;
     gap: 5rem;
+    background-color: var(--background-color);
 }
 
 .text-description{
