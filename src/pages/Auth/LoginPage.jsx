@@ -6,7 +6,9 @@ export default function Loginpage(){
         <>
         <div className="loginpage-wrapper">
         <Nav />
+        <div className="login-card-wrapper">
         <LoginCard />
+        </div>
         </div>
         </>
     )

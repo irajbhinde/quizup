@@ -5,7 +5,9 @@ export default function SignupPage() {
     <>
       <div className="signupPage-wrapper">
         <Nav />
-        <SignupCard />
+        <div className="signup-card-wrapper">
+          <SignupCard />
+        </div>
       </div>
     </>
   );

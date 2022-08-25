@@ -1,62 +1,73 @@
 .signupPage-wrapper {
-    background-color: var(--background-color);
-    display: grid;
-    grid-template-rows: 8rem 1fr;
-    grid-template-columns: 1fr;
-    width: 100vw;
-    height: 100vh;
-    grid-area: login;
-    grid-template-areas:
-      "nav"
-      "login";
-  }
+  background-color: var(--background-color);
+  display: grid;
+  grid-template-rows: 8rem 1fr;
+  grid-template-columns: 1fr;
+  width: 100vw;
+  height: 100vh;
+  grid-area: login;
+  grid-template-areas:
+    "nav"
+    "login";
+  overflow-x: hidden;
+}
 
 .signup-container {
-    font-size: 1.6rem;
-    color: var(--primary-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 64rem;
-    height: 60rem;
-    margin: 0 auto;
-    background-color: var(--background-color);
-    border: 1px solid var(--primary-color);
-    border-radius: 5px;
-  }
-  
-  .signup-title {
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .signup-password,
-  .signup-cnfPassword {
-    position: relative;
-  }
-  
-  .signup-pass-icon {
-    position: absolute;
-    top: 3.4rem;
-    right: 1rem;
-  }
-  
-  .btn-createAccount {
-    margin-top: 1rem;
-    color: var(--background-color);
-    font-size: 1.8rem;
-    background-color: var(--primary-color);
-    width: 37rem;
-    padding: 1rem;
-    cursor: pointer;
-  }
-  
-  .form-container {
-    gap: 2rem;
-  }
-  
-  .signup-container button[disabled=disabled], .signup-container button:disabled {
-    background-color: var(--white-text);
-    cursor: not-allowed;
-  }
-  
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 64rem;
+  height: 68rem;
+  margin: 0 auto 4rem auto;
+  background-color: var(--background-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+}
+
+.signup-title {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.signup-password,
+.signup-cnfPassword {
+  position: relative;
+}
+
+.signup-pass-icon {
+  position: absolute;
+  top: 3.4rem;
+  right: 1rem;
+}
+
+.btn-createAccount {
+  margin-top: 1rem;
+  color: var(--background-color);
+  font-size: 1.8rem;
+  background-color: var(--primary-color);
+  width: 37rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.form-container {
+  gap: 2rem;
+}
+
+.signup-container button[disabled="disabled"],
+.signup-container button:disabled {
+  background-color: var(--white-text);
+  cursor: not-allowed;
+}
+
+.autofill {
+  margin-top: 1rem;
+  color: var(--background-color);
+  font-size: 1.8rem;
+  background-color: var(--primary-color);
+  width: 37rem;
+  padding: 1rem;
+  cursor: pointer;
+}

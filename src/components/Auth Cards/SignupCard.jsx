@@ -2,37 +2,43 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../pages/Auth/signupPage.css";
 import { useAuth } from "../context/auth-context";
-import { useFormik } from "formik";
 import axios from "axios";
 
 export default function SignupCard() {
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
   const [passType, setPassType] = useState("password");
-  const formik = useFormik({
-    initialValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    },
-    onSubmit: (formik) => {
-      signupHandler(
-        formik.firstName,
-        formik.lastName,
-        formik.email,
-        formik.password
-      );
-    },
+  const [userCredentials, setUserCredentials] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
-  const signupHandler = async (firstName, lastName, email, password) => {
+  // const formik = useFormik({
+  //   initialValues: {
+  //     firstName: "",
+  //     lastName: "",
+  //     email: "",
+  //     password: "",
+  //     confirmPassword: "",
+  //   },
+  //   onSubmit: (formik) => {
+  //     signupHandler(
+  //       formik.firstName,
+  //       formik.lastName,
+  //       formik.email,
+  //       formik.password
+  //     );
+  //   },
+  // });
+  const signupHandler = async (userCredentials) => {
     try {
       const response = await axios.post(`/api/auth/signup`, {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        password: password,
+        firstName: userCredentials.firstName,
+        lastName: userCredentials.lastName,
+        email: userCredentials.email,
+        password: userCredentials.password,
       });
       localStorage.setItem("token", response.data.encodedToken);
       setAuth({
@@ -52,7 +58,7 @@ export default function SignupCard() {
         className="flex_c form-container"
         onSubmit={(e) => {
           e.preventDefault();
-          formik.handleSubmit();
+          signupHandler(userCredentials);
         }}
       >
         <h2 className="signup-title">Signup</h2>
@@ -61,8 +67,13 @@ export default function SignupCard() {
           <input
             id="firstName"
             name="firstName"
-            value={formik.values.firstName}
-            onChange={formik.handleChange}
+            value={userCredentials.firstName}
+            onChange={(e) => {
+              setUserCredentials({
+                ...userCredentials,
+                firstName: e.target.value,
+              });
+            }}
             type="text"
           />
         </label>
@@ -71,8 +82,13 @@ export default function SignupCard() {
           <input
             id="lastName"
             name="lastName"
-            value={formik.values.lastName}
-            onChange={formik.handleChange}
+            value={userCredentials.lastName}
+            onChange={(e) => {
+              setUserCredentials({
+                ...userCredentials,
+                lastName: e.target.value,
+              });
+            }}
             type="text"
           />
         </label>
@@ -81,8 +97,10 @@ export default function SignupCard() {
           <input
             id="email"
             name="email"
-            value={formik.values.email}
-            onChange={formik.handleChange}
+            value={userCredentials.email}
+            onChange={(e) => {
+              setUserCredentials({ ...userCredentials, email: e.target.value });
+            }}
             type="email"
           />
         </label>
@@ -91,8 +109,13 @@ export default function SignupCard() {
           <input
             id="password"
             name="password"
-            value={formik.values.password}
-            onChange={formik.handleChange}
+            value={userCredentials.password}
+            onChange={(e) => {
+              setUserCredentials({
+                ...userCredentials,
+                password: e.target.value,
+              });
+            }}
             type={passType}
           />
           {passType === "text" ? (
@@ -120,8 +143,13 @@ export default function SignupCard() {
           <input
             id="confirmPassword"
             name="confirmPassword"
-            value={formik.values.confirmPassword}
-            onChange={formik.handleChange}
+            value={userCredentials.confirmPassword}
+            onChange={(e) => {
+              setUserCredentials({
+                ...userCredentials,
+                confirmPassword: e.target.value,
+              });
+            }}
             type={passType}
           />
           {passType === "text" ? (
@@ -146,16 +174,31 @@ export default function SignupCard() {
         </label>
         <button
           disabled={
-            formik.values.firstName === "" ||
-            formik.values.email === "" ||
-            formik.values.password === "" ||
-            formik.values.confirmPassword === "" ||
-            formik.values.password !== formik.values.confirmPassword
+            userCredentials.firstName === "" ||
+            userCredentials.email === "" ||
+            userCredentials.password === "" ||
+            userCredentials.confirmPassword === "" ||
+            userCredentials.password !== userCredentials.confirmPassword
           }
           type="submit"
           className="btn-createAccount"
         >
           Create Account
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            setUserCredentials({
+              firstName: "Raj",
+              lastName: "Bhinde",
+              email: "rajbhinde3@gmail.com",
+              password: "ThisIsNotAGoodPassword",
+              confirmPassword: "ThisIsNotAGoodPassword",
+            });
+          }}
+          className="autofill"
+        >
+          Auto Fill Dummy Data
         </button>
         <Link to="/login">
           <p className="cursor-pointer">Already have an account ?</p>
